@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Inventario Básico</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Menú</h2>
+        <ul>
+            <li><a href="#" data-section="home">Inicio</a></li>
+            <li><a href="#" data-section="add-product">Agregar Producto</a></li>
+            <li><a href="#" data-section="add-qr">Escanear QR</a></li>
+            <li><a href="#" data-section="list-products">Lista de Productos</a></li>
+            <li><a href="#" data-section="reports">Reportes</a></li>
+            <li><a href="#" data-section="settings">Configuración</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <!-- Sección Inicio -->
+        <div id="home" class="section">
+            <h1>Productos con Bajo Stock</h1>
+            <ul id="low-stock-list">
+                <!-- Los productos con bajo stock se agregarán aquí dinámicamente -->
+            </ul>
+        </div>
+
+        <!-- Sección Agregar Producto -->
+        <!-- Sección Agregar Producto -->
+<div id="add-product" class="section" style="display: none;">
+    <h1>Agregar Nuevo Producto</h1>
+    <form id="inventory-form">
+        <div class="form-group">
+            <label for="product-name">Nombre:</label>
+            <input type="text" id="product-name" required>
+        </div>
+        <div class="form-group">
+            <label for="product-description">Descripción:</label>
+            <input type="text" id="product-description">
+        </div>
+        <div class="form-group">
+            <label for="product-quantity">Cantidad:</label>
+            <input type="number" id="product-quantity" min="0" required>
+        </div>
+        <div class="form-group">
+            <label for="product-price">Precio:</label>
+            <input type="number" id="product-price" min="0" step="0.01">
+        </div>
+        <div class="form-group">
+            <label for="product-lowstock">Límite de Stock para Bajo Inventario:</label>
+            <input type="number" id="product-lowstock" min="1" required>
+        </div>
+        <button type="submit">Agregar Producto</button>
+    </form>
+</div>
+
+
+        <!-- Sección Escanear QR -->
+        <div id="add-qr" class="section" style="display: none;">
+            <h1>Escanear Producto</h1>
+            <div id="qr-reader" style="width: 500px;"></div>
+            <div id="qr-reader-results"></div>
+        </div>
+
+        <!-- Sección Lista de Productos -->
+        <div id="list-products" class="section" style="display: none;">
+            <h1>Lista de Productos</h1>
+            <table id="inventory-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>Límite de Stock</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Los productos se agregarán aquí dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Sección Reportes -->
+        <div id="reports" class="section" style="display: none;">
+            <h1>Reportes</h1>
+            <!-- Contenedores para los gráficos -->
+            <div class="chart-container">
+                <canvas id="inventoryChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Sección Configuración -->
+        <div id="settings" class="section" style="display: none;">
+            <h1>Configuración General</h1>
+            <p>Aquí podrás ajustar configuraciones generales del sistema de inventario.</p>
+            <!-- Puedes agregar más configuraciones generales si lo deseas -->
+        </div>
+    </div>
+
+    <!-- Incluir las librerías necesarias -->
+    <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+    <script src="qr.js"></script>
+</body>
+</html>

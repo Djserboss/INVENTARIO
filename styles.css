@@ -1,0 +1,399 @@
+/* styles.css */
+
+/* Reset de márgenes y paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Estilos del menú lateral */
+.sidebar {
+    width: 200px;
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: #adb5bd;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background-color: #495057;
+    color: #fff;
+}
+
+/* Estilos del contenido principal */
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Sección Inicio */
+#home {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+#home h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#low-stock-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#low-stock-list li {
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#low-stock-list li span {
+    font-weight: bold;
+    color: #dc3545; /* Color rojo para destacar */
+}
+
+/* Sección Agregar Producto */
+#add-product {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+#add-product h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#inventory-form .form-group {
+    margin-bottom: 15px;
+}
+
+#inventory-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#inventory-form input[type="text"], 
+#inventory-form input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#inventory-form button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #28a745; /* Verde para acción positiva */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#inventory-form button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Sección Escanear QR */
+#add-qr {
+    background-color: #e9ecef;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+#add-qr h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#qr-reader {
+    width: 100%;
+    max-width: 500px;
+    height: 500px;
+    margin: 0 auto 20px auto;
+    border: 2px solid #6c757d;
+    border-radius: 10px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#qr-reader-results {
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Sección Lista de Productos */
+#list-products {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+#list-products h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#inventory-table th, #inventory-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+#inventory-table th {
+    background-color: #f8f8f8;
+}
+
+.actions button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.actions .edit {
+    background-color: #ffc107;
+    color: #fff;
+}
+
+.actions .delete {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.actions .edit:hover {
+    background-color: #e0a800;
+}
+
+.actions .delete:hover {
+    background-color: #c82333;
+}
+
+/* Sección Reportes */
+#reports {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+#reports h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.chart-container {
+    position: relative;
+    margin: auto;
+    height: 60vh; /* Ajusta la altura según tus necesidades */
+    width: 80vw;  /* Ajusta el ancho según tus necesidades */
+    max-width: 800px;
+}
+
+/* Sección Configuración */
+#settings {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+#settings h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#settings-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#settings-form .form-group {
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 400px;
+}
+
+#settings-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#settings-form input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#settings-form button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #28a745; /* Verde para acción positiva */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#settings-form button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+
+
+/* styles.css */
+
+/* ... (contenido existente) ... */
+
+/* Estilos para la sección Lista de Productos */
+#list-products {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+#list-products h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#inventory-table th, #inventory-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+#inventory-table th {
+    background-color: #f8f8f8;
+}
+
+#inventory-table td input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.actions button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.actions .edit {
+    background-color: #ffc107;
+    color: #fff;
+}
+
+.actions .delete {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.actions .edit:hover {
+    background-color: #e0a800;
+}
+
+.actions .delete:hover {
+    background-color: #c82333;
+}
+
+/* Botón para guardar cambios en el límite de stock */
+.actions .save {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.actions .save:hover {
+    background-color: #218838;
+}
+
+/* Botón para cancelar edición del límite de stock */
+.actions .cancel {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.actions .cancel:hover {
+    background-color: #5a6268;
+}
